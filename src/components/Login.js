@@ -67,6 +67,10 @@ const Login = () => {
         />
         <SignIn>Sign in</SignIn>
       </LoginDiv>
+      {user.username === "" || user.password === ""
+        &&
+        <p>Username or Password not valid.</p>
+      }
     </Page>
   );
 };

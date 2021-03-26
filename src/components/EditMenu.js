@@ -1,6 +1,13 @@
 import React from 'react';
 
-const EditMenu = ({colorToEdit, saveEdit, setColorToEdit, setEditing}) => {
+const EditMenu = (
+  {
+    colorToEdit, 
+    saveEdit, 
+    setColorToEdit, 
+    setEditing
+  }) => {
+
     return(<form onSubmit={saveEdit}>
         <legend>edit color</legend>
         <label htmlFor="colorName">color name:</label>

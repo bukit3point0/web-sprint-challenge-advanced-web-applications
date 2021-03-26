@@ -19,7 +19,7 @@ const ColorList = ({ colors, updateColors }) => {
 
   const saveEdit = e => {
     e.preventDefault();
-
+    // updateColors(colorToEdit)
   };
 
   const deleteColor = color => {
