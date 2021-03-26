@@ -1,32 +1,29 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
+import {useHistory} from 'react-router-dom'
 
 import {axiosWithAuth} from '../helpers/axiosWithAuth'
 
 const Page = styled.div``
 
-const initialColors = {
-    colors: []
-}
-
 const PrivateRoute = () => {
 
-    const [colors, setColors] = useState(initialColors)
+    const {push} = useHistory()
 
     useEffect(() => {
         axiosWithAuth().get('/colors')
         .then(res => {
-            console.log(res.data)
-            setColors(res.data)
+            push('/bubble-page')
         })
         .catch(err => {
             console.log(err)
+            push('/')
         })
     }, [])
 
     return(
         <Page>
-
+            <h1>Checking credentials...</h1>
         </Page>
     )
 }

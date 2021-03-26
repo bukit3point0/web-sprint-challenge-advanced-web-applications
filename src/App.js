@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Login from "./components/Login";
 import PrivateRoute from './components/PrivateRoute'
+import BubblePage from './components/BubblePage'
 import "./styles.scss";
 
 function App() {
@@ -14,6 +15,10 @@ function App() {
 
         <Route path='/private-route'>
           <PrivateRoute/>
+        </Route>
+
+        <Route path='/bubble-page'>
+          <BubblePage/>
         </Route>
 
       </div>
