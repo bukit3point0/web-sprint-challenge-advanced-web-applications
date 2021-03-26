@@ -9,18 +9,18 @@ import ColorList from "./ColorList";
 const BubblePage = () => {
   const [colorList, setColorList] = useState([]);
 
-  const {push} = useHistory()
+  const history = useHistory()
 
   useEffect(() => {
     axiosWithAuth().get('/colors')
     .then(res => {
         console.log(res.data)
         setColorList(res.data)
-        push('/bubble-page')
+        history.push('/bubble-page')
     })
     .catch(err => {
         console.log(err)
-        push('/')
+        history.push('/')
     })
 }, [])
 
